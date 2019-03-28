@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1beta7
+kind: Config
+build:
+  artifacts:
+    - image: sandbox/app
+      context: .
+      sync:
+        src/*: /src/
+      docker:
+        dockerfile: docker/php/Dockerfile
+  local:
+    push: false
+    useDockerCLI: true
+    useBuildkit: true
+deploy:
+  kustomize:
+    path: k8s

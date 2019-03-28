@@ -1,0 +1,4 @@
+resources:
+  - nginx-config.yaml
+  - app-deployment.yaml
+  - app-service.yaml
